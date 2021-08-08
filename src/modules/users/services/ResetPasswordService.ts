@@ -21,10 +21,10 @@ class ResetPasswordService {
       throw new AppError('User Token does not exists.');
     }
 
-    const user = await usersRepository.findById(userToken.userId);
+    const user = await usersRepository.findById(userToken.user_id);
 
     if (!user) {
-      throw new AppError('User Token does not exists.');
+      throw new AppError('User does not exists.');
     }
 
     const tokenCreatedAt = userToken.created_at;
@@ -36,9 +36,7 @@ class ResetPasswordService {
 
     user.password = await hash(password, 8);
 
-    usersRepository.save(user);
-
-    return user;
+    await usersRepository.save(user);
   }
 }
 

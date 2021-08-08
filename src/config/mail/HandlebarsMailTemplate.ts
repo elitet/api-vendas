@@ -1,5 +1,4 @@
 import handlebras from 'handlebars';
-import { string } from 'joi';
 
 interface ITemplateVariable {
   [key: string]: string | number;

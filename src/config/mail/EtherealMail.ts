@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import { string } from 'joi';
 import HandlebarsMailTemplate from '../mail/HandlebarsMailTemplate';
 
 interface IMailContact {

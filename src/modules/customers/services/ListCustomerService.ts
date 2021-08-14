@@ -7,8 +7,6 @@ class ListCustomerService {
     const customersRepository = getCustomRepository(CustomersRepository);
     const customers = await customersRepository.createQueryBuilder().paginate();
 
-    const x = 1;
-
     return customers;
   }
 }
